@@ -1,0 +1,32 @@
+void main_vertex( float4 position : POSITION,
+  		  out float4 oPosition : POSITION,
+  		  float2 texCoord : TEXCOORD0,
+  		  out float2 oTexCoord : TEXCOORD0,
+  		  uniform float4x4 modelViewProj )
+{
+    oPosition = mul(modelViewProj, position);
+    oTexCoord = texCoord;
+}
+
+const float GRAY_0 = 225.0 / 255.0;
+const float GRAY_1 = 160.0 / 255.0;
+const float GRAY_2 = 95.0 / 255.0;
+const float4 COLOR_0 = float4(248.0, 232.0, 200.0, 1.0) / 255.0;
+const float4 COLOR_1 = float4(216.0, 144.0, 72.0, 1.0) / 255.0;
+const float4 COLOR_2 = float4(168.0, 40.0, 32.0, 1.0) / 255.0;
+const float4 COLOR_3 = float4(48.0, 24.0, 80.0, 1.0) / 255.0;
+
+float4 main_fragment( float2 texCoord : TEXCOORD0, 
+  		      uniform sampler2D CURR : TEXUNIT0 ) : COLOR
+{
+    float4 texColor = tex2D(CURR, texCoord);
+
+	if(texColor.r >= GRAY_0)
+		return COLOR_0;
+	else if(texColor.r >= GRAY_1)
+		return COLOR_1;
+	else if(texColor.r >= GRAY_2)
+		return COLOR_2;
+	else
+		return COLOR_3;
+}
