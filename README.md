@@ -10,7 +10,8 @@ Edit: I realized that the SGB variant palettes from 2A to 4H are from an older v
 To install this, put the root of this project on the shaders folder, and inside Retroarch go to Shaders>Load>virtual boy colorize.glslp (or VB color+scaled.glslp for color+ smoothing).
 
 If you want to change the color, on the passes sector, select the vb\_colorize.glsl, select it to swap it, go to the shaders>other palettes> and there, you can pick Custom or Super Game Boy, and then, pick a glsl. 
-you can use this image as a guide for the SGB palettes https://imgur.com/a/ZmM5Uac
+
+You can use this image as a guide for the SGB palettes https://imgur.com/a/ZmM5Uac
 
 This plugin is a modified version of the original by EADMASTER, but it seems like he deleted it from Github.
 
